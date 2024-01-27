@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 courseDurationEdt.setText("");
                 courseTracksEdt.setText("");
                 courseDescriptionEdt.setText("");
+
             }
         });
     }

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MyCustomAdapter extends RecyclerView.Adapter<MyViewHolder>{
-    ArrayList<DataHolder> arrayList=new ArrayList<>();
+    ArrayList<DataHolder> arrayList;
     public MyCustomAdapter(ArrayList<DataHolder> arrayList){
         this.arrayList=arrayList;
     }

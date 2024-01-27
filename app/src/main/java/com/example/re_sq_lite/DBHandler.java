@@ -1,5 +1,8 @@
 package com.example.re_sq_lite;
 
+import static com.example.re_sq_lite.MainActivity2.arrayList;
+import static com.example.re_sq_lite.MainActivity2.myCustomAdapter;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -55,14 +58,15 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public ArrayList<DataHolder> fetchDbData(){
+    public void fetchDbData(){
         SQLiteDatabase db=this.getReadableDatabase();
         Cursor cursor=db.rawQuery("SELECT * FROM "+TABLE_NAME,null);
-        ArrayList<DataHolder> arrayList=new ArrayList<>();
+       // ArrayList<DataHolder> arrayList=new ArrayList<>();
         while (cursor.moveToNext()){
             arrayList.add(new DataHolder(cursor.getString(1)));
+            myCustomAdapter.notifyDataSetChanged();
         }
-        return arrayList;
     }
+
 }
 
